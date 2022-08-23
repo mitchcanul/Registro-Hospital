@@ -12,7 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//apis
+Route::apiResource('apip', 'PacientesController');
+Route::apiResource('apih', 'HospitalesController');
+Route::apiResource('apic', 'CiudadesController');
+//vistas
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('hospital', function () {
+    return view('hospital');
+});
+Route::get('ciudad', function () {
+    return view('ciudad');
+});
+Route::get('master', function () {
+    return view('layouts.master');
+});
+Route::get('pacientes', function () {
+    return view('pacientes');
 });
