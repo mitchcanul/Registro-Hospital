@@ -2,25 +2,29 @@
 @section('titulo', 'Pacientes')
 @section('contenido')
     <div id="pacientes">
-        <span class="btn btn-info float-right" data-toggle="modal" v-on:Click="showModal()"><i>Agregar</i></span>
-        <br><br>
-        <h5>Lista de pacientes</h5>
+        <div class="container-fluid">
+            <h5 class="text-center">Lista de pacientes</h5>
+            <span class="btn btn-outline-primary float-left" data-toggle="modal" v-on:Click="showModal()"><i>Registrar paciente</i></span>
+            <br><br>
+
         <div class="table-responsive" col-sm-12>
 
-            <table class="table table-hover table-striped">
+
+            <table class="table table-bordered table-hover table-striped">
                 <thead>
                     <th>#</th>
                     <th>Nombre del hospital</th>
-                    <th>nombre de ciudad</th>
-                    <th>nombres</th>
-                    <th>apellido paterno</th>
-                    <th>apellido materno</th>
-                    <th>edad</th>
-                    <th>sexo</th>
-                    <th>fecha de nacimiento</th>
-                    <th>fecha de inscripcion</th>
-                    <th>nombre de tutor</th>
-                    <th>numero de telefono</th>
+                    <th>Nombre de ciudad</th>
+                    <th>Nombres</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
+                    <th>Edad</th>
+                    <th>Sexo</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Fecha de inscripcion</th>
+                    <th>Nombre de tutor</th>
+                    <th>Numero de telefono</th>
+                    <th>Opciones</th>
                 </thead>
                 <tbody>
                     <tr v-for="(pacientes,index) in pacientes">
@@ -37,13 +41,15 @@
                         <td>@{{ pacientes.nombre_tutor }}</td>
                         <td>@{{ pacientes.telefono_tutor }}</td>
                         <td>
-                            <span class="btn btn-sm btn-primary" @click="editarPac(pacientes.id_paciente)">Editar</span>
-                            <span class="btn btn-sm btn-danger" @click="eliminarPac(pacientes.id_paciente)">eliminar</span>
-                            <span class="btn btn-sm btn-success" >Pdf</span>
+                            <span class="btn btn-sm btn-primary" @click="editarPac(pacientes.id_paciente)"><i class="fa fa-edit"></i></span>
+                            <span class="btn btn-sm btn-danger" @click="eliminarPac(pacientes.id_paciente)"><i class="fa fa-trash"></i></span> <hr>
+                            <span class="btn btn-sm btn-success" @click="getImprimir(pacientes.id_paciente)"><i class="fa fa-align-center fa-file-pdf"></i></span>
                         </td>
                     </tr>
                 </tbody>
-            </table>
+                </table>
+
+            </div>
 
             <div class="modal fade" id="add_pacientes" tabindex="-1"  role="dialog">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -62,14 +68,14 @@
                                 <div class="row p-12 mt-4 card-bg1" >
                                             <div class=" col-md-6 col-lg-6 m-b-10 mb-md-0 col-sm-12">
                                                 <label>Elegir hospital</label>
-                                                        <select class="form-control" v-model="id_hospital" required>
+                                                        <select class="form-select" v-model="id_hospital" required>
                                                                 <option disabled label="Hospital"></option>
                                                                 <option v-for="pacientes in hospitales" v-bind:value="pacientes.id_hospital">
                                                                 @{{ pacientes.nombre_hospital }}</option>
                                                         </select>
                                                                 <br>
                                                     <label>Elegir Ciudad</label>
-                                                        <select class="form-control" v-model="id_ciudad" required>
+                                                        <select class="form-select" v-model="id_ciudad" required>
                                                                 <option disabled label="Ciudad"></option>
                                                                 <option v-for="pacientes in ciudades" v-bind:value="pacientes.id_ciudad">
                                                                 @{{ pacientes.nombre_ciudad }}</option>
@@ -95,7 +101,7 @@
                                     <div class="row p-3 mt-4 card-bg1" >
                                         <div class=" col-md-6 col-lg-6 m-b-10 mb-md-0 col-sm-12">
                                                 <label class="form-control" for="sexo">Selecciona el valor de genero:</label>
-                                                                <select class="form-control" v-model="sexo" required="required">
+                                                                <select class="form-select" v-model="sexo" required="required">
                                                                     <option class="form-control" value="Masculino">Masculino</option>
                                                                     <option class="form-control" value="Femenino">Femenino</option>
                                                                 </select>
@@ -134,7 +140,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 
 @endsection

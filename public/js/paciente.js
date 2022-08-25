@@ -3,6 +3,7 @@ function init() {
     var UrlPacientes = "http://localhost/Registro-Hospital/public/apip";
     var UrlHospital = "http://localhost/Registro-Hospital/public/apih";
     var UrlCiudad = "http://localhost/Registro-Hospital/public/apic";
+    var urlTicket = "http://localhost/Registro-Hospital/public/pdf";
 
     new Vue({
         http: {
@@ -42,6 +43,12 @@ function init() {
         },
 
         methods: {
+            getImprimir(id){
+                var urlImprimir =
+                urlTicket + "?id_paciente=" + this.id_paciente;
+                window.open(urlImprimir + id, this.id_paciente, "_blank");
+            },
+
             getPacientes: function () {
                 this.$http.get(UrlPacientes).then(function (json) {
                     this.pacientes = json.data;

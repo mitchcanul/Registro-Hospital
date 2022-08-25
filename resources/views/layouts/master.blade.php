@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -12,12 +12,12 @@
     <!-- Font Awesome icons (free version)-->
     <script src="js/vue.min.js"></script>
     <script src="js/vue-resource.min.js"></script>
-        <link rel="stylesheet" href="dist/css/bootstrap.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="css/ionicons.min.css">
-       <!--  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-        <script src="js/all.min.js"></script>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!--  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+    <script src="js/all.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
@@ -41,7 +41,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    {{-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li> --}}
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="{{ url('pacientes') }}">Pacientes</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
@@ -82,32 +82,11 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <ul class="list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#!">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
+
+
+
                     </ul>
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; Nativo Digital 2022</div>
                 </div>
             </div>
         </div>
@@ -115,11 +94,11 @@
     <!-- Bootstrap core JS-->
     @stack('scripts')
     <script src="js/jquery-3.5.0.min.js"></script>
-        <!-- <script src="js/popper.min.js"></script> -->
-        <script src="dist/js/bootstrap.min.js"></script>
-        <script src="dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/Chart.js"></script>
-        <script src="js/modal.js"></script>
+    <!-- <script src="js/popper.min.js"></script> -->
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
