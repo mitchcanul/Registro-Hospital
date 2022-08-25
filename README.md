@@ -35,4 +35,11 @@
  Video de demostración
  https://recordit.co/WvtXw6NpQO
  
+ ### Modelo de base de datos ###
+ -Modelo de base de datos relacional
+ La tabla pacientes muestra todos los campos solicitados durante la prueba, agregue dos tablas mas que son ciudades y hospitales para visualizar un proyecto mas grande, ademas que en la mayoria de formularios siempre se encuentran este tipo de datos para seleccionar.
+ ![imagen](https://user-images.githubusercontent.com/110412398/186557394-eb0019db-8e2e-4205-b68f-5cf0dc95414c.png)
+
+ 
+ 
  
