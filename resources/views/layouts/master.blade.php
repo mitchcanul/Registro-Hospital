@@ -99,6 +99,7 @@
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/Chart.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/sweetalert2.all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>

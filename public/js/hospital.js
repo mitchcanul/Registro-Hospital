@@ -71,13 +71,41 @@ function init() {
                     });
             },
             eliminarH: function (id) {
-                var hp = confirm("Esta seguro de eliminar el hospital?");
-                if (hp == true)
-                    this.$http
-                        .delete(UrlHospital + "/" + id)
-                        .then(function (json) {
-                            this.getHospital();
+                Swal.fire({
+                    title: "El hospital será eliminado",
+                    text: "Está seguro de eliminar el hospital?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Sí, eliminar",
+                    cancelButtonText: "Cancelar",
+                    dangerMode: true,
+                }).then((resultado) => {
+                    if (resultado.value) {
+                        this.$http
+                            .delete(UrlHospital + "/" + id)
+                            .then(function (json) {
+                                this.getHospital();
+                            });
+                        Swal.fire("El hospital fue eliminado exitosamente", {
+                            icon: "success",
                         });
+                    } else {
+                        Swal.fire("El hospital no se pudo eliminar");
+                    }
+                });
+
+
+
+
+
+
+                // var hp = confirm("Esta seguro de eliminar el hospital?");
+                // if (hp == true)
+                //     this.$http
+                //         .delete(UrlHospital + "/" + id)
+                //         .then(function (json) {
+                //             this.getHospital();
+                //         });
             },
         },
     });
