@@ -70,12 +70,28 @@ function init() {
                     });
             },
             eliminarC: function (id) {
-                var cd = confirm("Esta seguro de eliminar la ciudad?");
-                if (cd == true)
-                    this.$http.delete(UrlCiudad + "/" + id)
-                        .then(function (json) {
-                            this.getCiudad();
+                Swal.fire({
+                    title: "La ciudad será eliminado",
+                    text: "Está seguro de eliminar la ciudad?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Sí, eliminar",
+                    cancelButtonText: "Cancelar",
+                    dangerMode: true,
+                }).then((resultado) => {
+                    if (resultado.value) {
+                        this.$http
+                            .delete(UrlCiudad + "/" + id)
+                            .then(function (json) {
+                                this.getCiudad();
+                            });
+                        Swal.fire("La ciudad fue eliminada exitosamente", {
+                            icon: "success",
                         });
+                    } else {
+                        Swal.fire("La ciudad no se pudo eliminar");
+                    }
+                });
             },
         },
     });

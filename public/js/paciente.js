@@ -141,14 +141,34 @@ function init() {
                         this.Salir();
                     });
             },
+
+
+
             eliminarPac: function (id) {
-                var pac = confirm("Esta seguro de eliminar el paciente?");
-                if (pac == true)
-                    this.$http
-                        .delete(UrlPacientes + "/" + id)
-                        .then(function (json) {
-                            this.getPacientes();
+                Swal.fire({
+                    title: "El paciente será eliminado",
+                    text: "Está seguro de eliminar el paciente?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Sí, eliminar",
+                    cancelButtonText: "Cancelar",
+                    dangerMode: true,
+                })
+                .then(resultado => {
+                    if (resultado.value) {
+                        this.$http
+                            .delete(UrlPacientes + "/" + id)
+                            .then(function (json) {
+                                this.getPacientes();
+                            });
+                        Swal.fire("El paciente fue eliminado exitosamente", {
+                            icon: "success",
                         });
+                    } else {
+                        Swal.fire("El paciente no se pudo eliminar");
+                    }
+                });
+
             },
         },
     });
