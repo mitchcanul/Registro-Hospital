@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('master', function () {
 Route::get('pacientes', function () {
     return view('pacientes');
 });
+
+Route::get('/pdf', [PdfController::class, 'imprimirPdfP']);

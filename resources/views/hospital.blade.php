@@ -2,29 +2,33 @@
 @section('titulo', 'Pacientes')
 @section('contenido')
     <div id="hospitales">
-        <span class="btn btn-info float-right" data-toggle="modal" v-on:Click="showModal()"><i >Agregar</i></span>
-        <h5>Lista de Hospitales</h5>
+        <div class="container-sm">
+            <h5 class="text-center">Lista de Hospitales</h5>
+        <span class="btn btn-outline-primary float-left" data-toggle="modal" v-on:Click="showModal()"><i >Agregar</i></span>
+        <br><br>
+
         <div class="table-responsive" col-sm-12>
 
-            <table class="table table-hover table-striped">
+            <table class="table table-bordered table-hover table-striped">
                 <thead>
                     <th>#</th>
                     <th>Nombre del hospital</th>
+                    <th>Opciones</th>
                 </thead>
                 <tbody>
                     <tr v-for="(hospitales,index) in hospitales">
                         <td>@{{ index + 1 }}</td>
                         <td>@{{ hospitales.nombre_hospital }}</td>
                         <td>
-                            <span class="btn btn-sm btn-primary" @click="editarH(hospitales.id_hospital)">Editar</span>
-                            <span class="btn btn-sm btn-danger" @click="eliminarH(hospitales.id_hospital)">eliminar</span>
+                            <span class="btn btn-sm btn-primary" @click="editarH(hospitales.id_hospital)"><i class="fa fa-edit"></i></span>
+                            <span class="btn btn-sm btn-danger" @click="eliminarH(hospitales.id_hospital)"><i class="fa fa-trash"></i></span>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
         <div class="modal fade" id="add_hospitales" tabindex="-1" role="dialog" >
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" v-if="editar">Editando</h4>
@@ -53,6 +57,7 @@
                 </div>
             </div>
             </div>
+        </div>
         </div>
 
 @endsection

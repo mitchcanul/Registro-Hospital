@@ -2,22 +2,26 @@
 @section('titulo', 'Ciudad')
 @section('contenido')
     <div id="ciudades">
-        <span class="btn btn-info float-right" data-toggle="modal" v-on:Click="showModal()"><i >Agregar</i></span>
-        <h5>Lista de Ciudades que cuentan con hospital</h5>
+        <div class="container-sm">
+            <h5 class="text-center">Lista de Ciudades que cuentan con hospital</h5>
+        <span class="btn btn-outline-primary float-left" data-toggle="modal" v-on:Click="showModal()"><i >Agregar</i></span>
+        <br><br>
+
         <div class="table-responsive" col-sm-12>
 
-            <table class="table table-hover table-striped">
+            <table class="table table-bordered table-hover table-striped">
                 <thead>
                     <th>#</th>
                     <th>Lugares</th>
+                    <th>Opciones</th>
                 </thead>
                 <tbody>
                     <tr v-for="(ciudades,index) in ciudades">
                         <td>@{{ index + 1 }}</td>
                         <td>@{{ ciudades.nombre_ciudad }}</td>
                         <td>
-                            <span class="btn btn-sm btn-primary" @click="editarC(ciudades.id_ciudad)">Editar</span>
-                            <span class="btn btn-sm btn-danger" @click="eliminarC(ciudades.id_ciudad)">eliminar</span>
+                            <span class="btn btn-sm btn-primary" @click="editarC(ciudades.id_ciudad)"><i class="fa fa-edit"></i></span>
+                            <span class="btn btn-sm btn-danger" @click="eliminarC(ciudades.id_ciudad)"><i class="fa fa-trash"></i></span>
                         </td>
 
                     </tr>
@@ -50,6 +54,7 @@
 
                     </div>
                 </div>
+            </div>
             </div>
             </div>
         </div>
